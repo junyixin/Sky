@@ -35,9 +35,7 @@ final class WeatherDataManager {
         request.httpMethod = "GET"
         
         self.urlSession.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                self.didFinishGettingWeatherData(data: data, response: response, error: error, completion: completion)
-            }
+            self.didFinishGettingWeatherData(data: data, response: response, error: error, completion: completion)
         }.resume()
     }
     
@@ -49,7 +47,9 @@ final class WeatherDataManager {
             if response.statusCode == 200 {
                 // 解析数据
                 do {
-                    let weatherData = try JSONDecoder().decode(WeatherData.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let weatherData = try decoder.decode(WeatherData.self, from: data)
                     completion(weatherData, nil)
                 }
                 catch {

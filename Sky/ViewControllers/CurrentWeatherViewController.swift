@@ -57,7 +57,7 @@ class CurrentWeatherViewController: WeatherViewController {
         
         locationLabel.text = location.name
         temperatureLabel.text = String(
-            format: "%.1f",
+            format: "%.1f ℃",
             data.currently.temperature.toCelcius())
         
         weatherIcon.image = weatherIcon(of: data.currently.icon)

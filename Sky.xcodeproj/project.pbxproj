@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759CFB7200F82F5006D472B /* AppDelegate.swift */; };
-		7759CFBA200F82F5006D472B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759CFB9200F82F5006D472B /* ViewController.swift */; };
+		7759CFBA200F82F5006D472B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759CFB9200F82F5006D472B /* RootViewController.swift */; };
 		7759CFBD200F82F5006D472B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7759CFBB200F82F5006D472B /* Main.storyboard */; };
 		7759CFBF200F82F5006D472B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7759CFBE200F82F5006D472B /* Assets.xcassets */; };
 		7759CFC2200F82F5006D472B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7759CFC0200F82F5006D472B /* LaunchScreen.storyboard */; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		7759CFB4200F82F5006D472B /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7759CFB7200F82F5006D472B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7759CFB9200F82F5006D472B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7759CFB9200F82F5006D472B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7759CFBC200F82F5006D472B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7759CFBE200F82F5006D472B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7759CFC1200F82F5006D472B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		7759CFE62010E1E1006D472B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7759CFB9200F82F5006D472B /* ViewController.swift */,
+				7759CFB9200F82F5006D472B /* RootViewController.swift */,
 				77BD7D202016EBA700077F8A /* WeatherViewController.swift */,
 				77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */,
 			);
@@ -316,7 +316,7 @@
 				TargetAttributes = {
 					7759CFB3200F82F5006D472B = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					7759CFC7200F82F5006D472B = {
 						CreatedOnToolsVersion = 9.2;
@@ -389,7 +389,7 @@
 				77E2BA0D2011F02D00651699 /* URLSessionDataTaskProtocol.swift in Sources */,
 				77E2BA112011F13C00651699 /* URLSessionDataTask.swift in Sources */,
 				77BD7D252016F05500077F8A /* Double.swift in Sources */,
-				7759CFBA200F82F5006D472B /* ViewController.swift in Sources */,
+				7759CFBA200F82F5006D472B /* RootViewController.swift in Sources */,
 				77A4C5372011A05A00DB4676 /* WeatherData.swift in Sources */,
 				77E2BA0F2011F13000651699 /* URLSession.swift in Sources */,
 				7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */,
@@ -564,8 +564,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
 				INFOPLIST_FILE = "Sky/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.Sky;
@@ -580,8 +581,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
 				INFOPLIST_FILE = "Sky/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.Sky;

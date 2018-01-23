@@ -29,7 +29,6 @@ class WeatherDataManagerTests: XCTestCase {
     }
     
     func testWeatherDataAtStartSession() {
-//        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
         manager?.weatherDataAt(latitude: 12.00, longitude: 29.18) { (_, _) in }
         
         XCTAssert(session.sessionDataTask.isResumeCalled)
@@ -51,9 +50,7 @@ class WeatherDataManagerTests: XCTestCase {
     func testWeatherDataAtFailedRequest() {
         session.responseError = NSError(domain: "invalid request", code: 100, userInfo: nil)
         
-//        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
         var error: DataManagerError? = nil
-        
         manager?.weatherDataAt(latitude: 52.0, longitude: 120.0, completion: { (_, e) in
             error = e
         })
@@ -67,9 +64,7 @@ class WeatherDataManagerTests: XCTestCase {
         let data = "{}".data(using: .utf8)!
         session.responseData = data
         
-//        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
         var error: DataManagerError? = nil
-        
         manager?.weatherDataAt(latitude: 52.00, longitude: 120.00, completion: { (_, e) in
             error = e
         })
@@ -83,9 +78,7 @@ class WeatherDataManagerTests: XCTestCase {
         let data = "{".data(using: .utf8)!
         session.responseData = data
         
-//        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
         var error: DataManagerError? = nil
-        
         manager?.weatherDataAt(latitude: 52.00, longitude: 120.00, completion: { (_, e) in
             error = e
         })
@@ -111,9 +104,7 @@ class WeatherDataManagerTests: XCTestCase {
         """.data(using: .utf8)!
         session.responseData = data
         
-//        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
-        var decoded: WeatherData? = nil
-        
+        var decoded: WeatherData? = nil        
         manager?.weatherDataAt(latitude: 52.00, longitude: 120.00, completion: { (d, _) in
             decoded = d
         })

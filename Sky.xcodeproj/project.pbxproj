@@ -17,6 +17,8 @@
 		77A4C53220119E8300DB4676 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4C53120119E8300DB4676 /* Config.swift */; };
 		77A4C53520119FC000DB4676 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4C53420119FC000DB4676 /* Location.swift */; };
 		77A4C5372011A05A00DB4676 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4C5362011A05A00DB4676 /* WeatherData.swift */; };
+		77B268162018CBB500A155D1 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268152018CBB500A155D1 /* CurrentWeatherViewModel.swift */; };
+		77B268182018CE2500A155D1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268172018CE2500A155D1 /* UIImage.swift */; };
 		77BD7D212016EBA700077F8A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D202016EBA700077F8A /* WeatherViewController.swift */; };
 		77BD7D232016EE1600077F8A /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */; };
 		77BD7D252016F05500077F8A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D242016F05500077F8A /* Double.swift */; };
@@ -64,6 +66,8 @@
 		77A4C53120119E8300DB4676 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		77A4C53420119FC000DB4676 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		77A4C5362011A05A00DB4676 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		77B268152018CBB500A155D1 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		77B268172018CE2500A155D1 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		77BD7D202016EBA700077F8A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		77BD7D242016F05500077F8A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		7759CFB6200F82F5006D472B /* Sky */ = {
 			isa = PBXGroup;
 			children = (
+				77B268142018CB8800A155D1 /* ViewModels */,
 				77E2BA092011F00900651699 /* Extensions */,
 				77E2BA082011F00100651699 /* Protocols */,
 				77E2BA012011C22B00651699 /* Manager */,
@@ -220,6 +225,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		77B268142018CB8800A155D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				77B268152018CBB500A155D1 /* CurrentWeatherViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		77E2BA012011C22B00651699 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +256,7 @@
 				77E2BA0E2011F13000651699 /* URLSession.swift */,
 				77E2BA102011F13C00651699 /* URLSessionDataTask.swift */,
 				77BD7D242016F05500077F8A /* Double.swift */,
+				77B268172018CE2500A155D1 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +404,7 @@
 				77E2BA112011F13C00651699 /* URLSessionDataTask.swift in Sources */,
 				77BD7D252016F05500077F8A /* Double.swift in Sources */,
 				7759CFBA200F82F5006D472B /* RootViewController.swift in Sources */,
+				77B268182018CE2500A155D1 /* UIImage.swift in Sources */,
 				77A4C5372011A05A00DB4676 /* WeatherData.swift in Sources */,
 				77E2BA0F2011F13000651699 /* URLSession.swift in Sources */,
 				7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */,
@@ -397,6 +412,7 @@
 				77A4C53220119E8300DB4676 /* Config.swift in Sources */,
 				77BD7D212016EBA700077F8A /* WeatherViewController.swift in Sources */,
 				77BD7D232016EE1600077F8A /* CurrentWeatherViewController.swift in Sources */,
+				77B268162018CBB500A155D1 /* CurrentWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

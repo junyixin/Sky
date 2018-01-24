@@ -23,6 +23,8 @@ class RootViewController: UIViewController {
                 fatalError("Invalid destination view controller.")
             }
             
+            destination.delegate = self
+            destination.viewModel = CurrentWeatherViewModel()
             currentWeatherViewController = destination
         default:
             break
@@ -55,7 +57,7 @@ class RootViewController: UIViewController {
             else if let city = placemarks?.first?.locality {
                 let loc = Location(name: city, latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
                 
-                self.currentWeatherViewController.location = loc
+                self.currentWeatherViewController.viewModel?.location = loc
             }
         })
     }
@@ -71,7 +73,7 @@ class RootViewController: UIViewController {
                 dump(error)
             }
             else if let response = response {
-                self.currentWeatherViewController.now = response
+                self.currentWeatherViewController.viewModel?.weather = response
             }
         }
     }
@@ -125,3 +127,18 @@ extension RootViewController: CLLocationManagerDelegate {
          dump(error)
     }
 }
+
+
+extension RootViewController: CurrentWeatherViewControllerDelegate {
+    func locationButtonPressed(controller: CurrentWeatherViewController) {
+        print("click location")
+    }
+    
+    func settingsButtonPressed(controller: CurrentWeatherViewController) {
+        print("click setting")
+    }
+}
+
+
+
+

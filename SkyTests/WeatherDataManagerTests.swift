@@ -99,6 +99,17 @@ class WeatherDataManagerTests: XCTestCase {
                 "icon": "snow",
                 "time": 1507816281,
                 "summary": "Clear"
+            },
+            daily: {
+                "data": [
+                    {
+                        "time": 1507816281,
+                        "temperatureHigh": 82,
+                        "temperatureLow": 66,
+                        "icon": "clear-day",
+                        "humidity": 0.66
+                    }
+                ]
             }
         }
         """.data(using: .utf8)!
@@ -109,6 +120,15 @@ class WeatherDataManagerTests: XCTestCase {
             decoded = d
         })
         
+        let expectWeekWeatherData = WeatherData.WeekWeatherData(
+            data: [
+                ForecastData(
+                    time: Date(timeIntervalSince1970: 1507816281),
+                    temperatureHigh: 82,
+                    temperatureLow: 66,
+                    icon: "clear-day",
+                    humidity: 0.66)
+            ])
         let expect = WeatherData(
             latitude: 52.0,
             longitude: 100.0,
@@ -118,7 +138,8 @@ class WeatherDataManagerTests: XCTestCase {
                 icon: "snow",
                 temperature: 23.5,
                 humidity: 0.91
-            )
+            ),
+            daily: expectWeekWeatherData
         )
         
         XCTAssertEqual(decoded, expect)

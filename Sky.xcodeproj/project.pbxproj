@@ -21,6 +21,10 @@
 		77BD7D212016EBA700077F8A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D202016EBA700077F8A /* WeatherViewController.swift */; };
 		77BD7D232016EE1600077F8A /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */; };
 		77BD7D252016F05500077F8A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD7D242016F05500077F8A /* Double.swift */; };
+		77D2BD61201EDE84008D5068 /* WeekWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2BD60201EDE84008D5068 /* WeekWeatherViewController.swift */; };
+		77D2BD64201EE07C008D5068 /* WeekWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2BD63201EE07C008D5068 /* WeekWeatherTableViewCell.swift */; };
+		77D2BD66201EE433008D5068 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2BD65201EE433008D5068 /* ForecastData.swift */; };
+		77D2BD68201EE4AA008D5068 /* WeekWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2BD67201EE4AA008D5068 /* WeekWeatherViewModel.swift */; };
 		77D33148201B5A8F008BB495 /* CurrentWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D33147201B5A8F008BB495 /* CurrentWeatherUITests.swift */; };
 		77E2BA032011C24400651699 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2BA022011C24400651699 /* WeatherDataManager.swift */; };
 		77E2BA072011EA9900651699 /* WeatherDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2BA062011EA9900651699 /* WeatherDataManagerTests.swift */; };
@@ -70,6 +74,10 @@
 		77BD7D202016EBA700077F8A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		77BD7D242016F05500077F8A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		77D2BD60201EDE84008D5068 /* WeekWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewController.swift; sourceTree = "<group>"; };
+		77D2BD63201EE07C008D5068 /* WeekWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		77D2BD65201EE433008D5068 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		77D2BD67201EE4AA008D5068 /* WeekWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewModel.swift; sourceTree = "<group>"; };
 		77D33147201B5A8F008BB495 /* CurrentWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherUITests.swift; sourceTree = "<group>"; };
 		77E2BA022011C24400651699 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		77E2BA062011EA9900651699 /* WeatherDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManagerTests.swift; sourceTree = "<group>"; };
@@ -176,9 +184,11 @@
 		7759CFE62010E1E1006D472B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				77D2BD62201EE05E008D5068 /* TableViewCells */,
 				7759CFB9200F82F5006D472B /* RootViewController.swift */,
 				77BD7D202016EBA700077F8A /* WeatherViewController.swift */,
 				77BD7D222016EE1600077F8A /* CurrentWeatherViewController.swift */,
+				77D2BD60201EDE84008D5068 /* WeekWeatherViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +231,7 @@
 			children = (
 				77A4C53420119FC000DB4676 /* Location.swift */,
 				77A4C5362011A05A00DB4676 /* WeatherData.swift */,
+				77D2BD65201EE433008D5068 /* ForecastData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,8 +240,17 @@
 			isa = PBXGroup;
 			children = (
 				77B268152018CBB500A155D1 /* CurrentWeatherViewModel.swift */,
+				77D2BD67201EE4AA008D5068 /* WeekWeatherViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		77D2BD62201EE05E008D5068 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				77D2BD63201EE07C008D5068 /* WeekWeatherTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		77E2BA012011C22B00651699 /* Manager */ = {
@@ -402,17 +422,21 @@
 				77E2BA0B2011F01B00651699 /* URLSessionProtocol.swift in Sources */,
 				77E2BA032011C24400651699 /* WeatherDataManager.swift in Sources */,
 				77E2BA0D2011F02D00651699 /* URLSessionDataTaskProtocol.swift in Sources */,
+				77D2BD68201EE4AA008D5068 /* WeekWeatherViewModel.swift in Sources */,
 				77E2BA112011F13C00651699 /* URLSessionDataTask.swift in Sources */,
 				77BD7D252016F05500077F8A /* Double.swift in Sources */,
+				77D2BD61201EDE84008D5068 /* WeekWeatherViewController.swift in Sources */,
 				7759CFBA200F82F5006D472B /* RootViewController.swift in Sources */,
 				77B268182018CE2500A155D1 /* UIImage.swift in Sources */,
 				77A4C5372011A05A00DB4676 /* WeatherData.swift in Sources */,
 				77E2BA0F2011F13000651699 /* URLSession.swift in Sources */,
 				7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */,
 				77A4C53520119FC000DB4676 /* Location.swift in Sources */,
+				77D2BD64201EE07C008D5068 /* WeekWeatherTableViewCell.swift in Sources */,
 				77A4C53220119E8300DB4676 /* Config.swift in Sources */,
 				77BD7D212016EBA700077F8A /* WeatherViewController.swift in Sources */,
 				77BD7D232016EE1600077F8A /* CurrentWeatherViewController.swift in Sources */,
+				77D2BD66201EE433008D5068 /* ForecastData.swift in Sources */,
 				77B268162018CBB500A155D1 /* CurrentWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

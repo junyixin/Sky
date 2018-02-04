@@ -273,6 +273,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="dog-CB-yMM" id="thR-eI-XWL"/>
+                                            <outlet property="delegate" destination="dog-CB-yMM" id="VNH-JY-rRG"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

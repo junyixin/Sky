@@ -44,7 +44,15 @@ class WeekWeatherViewController: WeatherViewController {
     }
 }
 
-extension WeekWeatherViewController: UITableViewDataSource {
+extension WeekWeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let _ = viewModel else {
+            return 0.0
+        }
+        
+        return 104.0
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let vm = viewModel else {
             return 0

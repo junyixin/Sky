@@ -82,7 +82,7 @@ class RootViewController: UIViewController {
             }
             else if let response = response {
                 self.currentWeatherViewController.viewModel?.weather = response
-                self.weekWeatherViewController.viewModel = WeekWeatherViewModel(weatherData: response.daily.data)
+                self.weekWeatherViewController.viewModel = WeekWeatherViewModel(response.daily.data)
             }
         }
     }

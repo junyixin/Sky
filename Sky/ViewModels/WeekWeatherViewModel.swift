@@ -11,6 +11,10 @@ import UIKit
 struct WeekWeatherViewModel {
     let weatherData: [ForecastData]
     
+    init(_ weatherData: [ForecastData]) {
+        self.weatherData = weatherData
+    }
+    
     private var dateFormatter = DateFormatter()
     
     func week(for index: Int) -> String {
@@ -39,7 +43,7 @@ struct WeekWeatherViewModel {
     func humidity(for index: Int) -> String {
         return String(format: "%.0f %%", weatherData[index].humidity)
     }
-    
+        
     var numberOfSection: Int {
         return 1
     }

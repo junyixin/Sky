@@ -76,12 +76,8 @@ extension WeekWeatherViewController: UITableViewDelegate, UITableViewDataSource 
             fatalError("Unexpected table view cell.")
         }
         
-        if let vm = viewModel {
-            row.week.text = vm.week(for: indexPath.row)
-            row.date.text = vm.date(for: indexPath.row)
-            row.temp.text = vm.temperature(for: indexPath.row)
-            row.weatherIcon.image = vm.weatherIcon(for: indexPath.row)
-            row.humid.text = vm.humidity(for: indexPath.row)
+        if let vm = viewModel?.viewModel(for: indexPath.row) {
+            cell?.configure(with: vm)
         }
         
         return row

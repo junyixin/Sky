@@ -36,6 +36,11 @@
 		77E2BA132011F2FA00651699 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2BA122011F2FA00651699 /* MockURLSession.swift */; };
 		77E2BA152011F30700651699 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2BA142011F30700651699 /* MockURLSessionDataTask.swift */; };
 		77ED058C204517890054263D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED058B204517890054263D /* SettingTableViewController.swift */; };
+		77ED058E20453BD40054263D /* SettingDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED058D20453BD40054263D /* SettingDateViewModel.swift */; };
+		77ED059020453BE30054263D /* SettingTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED058F20453BE30054263D /* SettingTemperatureViewModel.swift */; };
+		77ED0592204540240054263D /* SettingsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED0591204540240054263D /* SettingsRepresentable.swift */; };
+		77ED0594204543B90054263D /* WeatherDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED0593204543B90054263D /* WeatherDayViewModel.swift */; };
+		77ED0596204546170054263D /* WeekWeatherDayRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED0595204546170054263D /* WeekWeatherDayRepresentable.swift */; };
 		77F9514D20274B4000424CDF /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9514C20274B4000424CDF /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +97,11 @@
 		77E2BA122011F2FA00651699 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		77E2BA142011F30700651699 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		77ED058B204517890054263D /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		77ED058D20453BD40054263D /* SettingDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDateViewModel.swift; sourceTree = "<group>"; };
+		77ED058F20453BE30054263D /* SettingTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTemperatureViewModel.swift; sourceTree = "<group>"; };
+		77ED0591204540240054263D /* SettingsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepresentable.swift; sourceTree = "<group>"; };
+		77ED0593204543B90054263D /* WeatherDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayViewModel.swift; sourceTree = "<group>"; };
+		77ED0595204546170054263D /* WeekWeatherDayRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherDayRepresentable.swift; sourceTree = "<group>"; };
 		77F9514C20274B4000424CDF /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +258,9 @@
 			children = (
 				77B268152018CBB500A155D1 /* CurrentWeatherViewModel.swift */,
 				77D2BD67201EE4AA008D5068 /* WeekWeatherViewModel.swift */,
+				77ED058D20453BD40054263D /* SettingDateViewModel.swift */,
+				77ED058F20453BE30054263D /* SettingTemperatureViewModel.swift */,
+				77ED0593204543B90054263D /* WeatherDayViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -274,6 +287,8 @@
 			children = (
 				77E2BA0A2011F01B00651699 /* URLSessionProtocol.swift */,
 				77E2BA0C2011F02D00651699 /* URLSessionDataTaskProtocol.swift */,
+				77ED0591204540240054263D /* SettingsRepresentable.swift */,
+				77ED0595204546170054263D /* WeekWeatherDayRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -430,7 +445,9 @@
 			files = (
 				77F9514D20274B4000424CDF /* SettingTableViewCell.swift in Sources */,
 				77E2BA0B2011F01B00651699 /* URLSessionProtocol.swift in Sources */,
+				77ED058E20453BD40054263D /* SettingDateViewModel.swift in Sources */,
 				77E2BA032011C24400651699 /* WeatherDataManager.swift in Sources */,
+				77ED059020453BE30054263D /* SettingTemperatureViewModel.swift in Sources */,
 				77E2BA0D2011F02D00651699 /* URLSessionDataTaskProtocol.swift in Sources */,
 				77D2BD68201EE4AA008D5068 /* WeekWeatherViewModel.swift in Sources */,
 				77E2BA112011F13C00651699 /* URLSessionDataTask.swift in Sources */,
@@ -441,10 +458,13 @@
 				77A4C5372011A05A00DB4676 /* WeatherData.swift in Sources */,
 				77E2BA0F2011F13000651699 /* URLSession.swift in Sources */,
 				7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */,
+				77ED0592204540240054263D /* SettingsRepresentable.swift in Sources */,
 				77A4C53520119FC000DB4676 /* Location.swift in Sources */,
 				77D2BD64201EE07C008D5068 /* WeekWeatherTableViewCell.swift in Sources */,
+				77ED0596204546170054263D /* WeekWeatherDayRepresentable.swift in Sources */,
 				77A4C53220119E8300DB4676 /* Config.swift in Sources */,
 				77BD7D212016EBA700077F8A /* WeatherViewController.swift in Sources */,
+				77ED0594204543B90054263D /* WeatherDayViewModel.swift in Sources */,
 				77B912022026BFEF0051768E /* UserDefaults.swift in Sources */,
 				77ED058C204517890054263D /* SettingTableViewController.swift in Sources */,
 				77BD7D232016EE1600077F8A /* CurrentWeatherViewController.swift in Sources */,

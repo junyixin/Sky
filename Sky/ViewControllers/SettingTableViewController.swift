@@ -46,6 +46,10 @@ extension SettingTableViewController {
         return Section.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = Section(rawValue: section) else {
             fatalError("Unexpected section index")
@@ -72,25 +76,26 @@ extension SettingTableViewController {
             fatalError("Unexpected section index")
         }
         
+        var settingViewModel: SettingsRepresentable?
+        
         switch section {
         case .date:
-            cell.label.text = (indexPath.row == 0) ? "Fri, 01 December" : "F, 12/01"
-            
-            let timeMode = UserDefaults.dateMode()
-            if indexPath.row == timeMode.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            guard let dateMode = DateMode(rawValue: indexPath.row) else {
+                fatalError("Invalid indexPath")
             }
+            
+            settingViewModel = SettingDateViewModel(dateMode: dateMode)
+
         case .temperature:
-            cell.label.text = (indexPath.row == 0) ? "Celcius" : "Fahrenheit"
-            
-            let temperatureMode = UserDefaults.temperatureMode()
-            if indexPath.row == temperatureMode.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            guard let temperatureMode = TemperatureMode(rawValue: indexPath.row) else {
+                fatalError("Invalid indexPath")
             }
+            
+            settingViewModel = SettingTemperatureViewModel(temperatureMode: temperatureMode)
+        }
+        
+        if let vm = settingViewModel {
+            cell.configure(with: vm)
         }
         
         return cell

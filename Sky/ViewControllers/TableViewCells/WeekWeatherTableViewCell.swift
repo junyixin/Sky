@@ -23,9 +23,11 @@ class WeekWeatherTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with vm: WeekWeatherDayRepresentable) {
+        week.text = vm.week
+        date.text = vm.date
+        temp.text = vm.temperature
+        humid.text = vm.humidity
+        weatherIcon.image = vm.weatherIcon
     }
 }

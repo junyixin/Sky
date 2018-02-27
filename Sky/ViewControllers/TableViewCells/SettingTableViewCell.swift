@@ -15,6 +15,11 @@ class SettingTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+    }
+    
+    func configure(with vm: SettingsRepresentable) {
+        label.text = vm.labelText
+        accessoryType = vm.accessory
     }
 }

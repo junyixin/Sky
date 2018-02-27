@@ -17,6 +17,8 @@ extension UIImage {
             return UIImage(named: "clear-night")
         case "rain":
             return UIImage(named: "rain")
+        case "fog":
+            return UIImage(named: "fog")
         case "snow":
             return UIImage(named: "snow")
         case "sleet":

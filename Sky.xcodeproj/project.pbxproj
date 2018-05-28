@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		773D1A4520BC37D400DEC9A9 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A4420BC37D400DEC9A9 /* XCTestCase.swift */; };
+		773D1A4820BC390700DEC9A9 /* DarkSky.json in Resources */ = {isa = PBXBuildFile; fileRef = 773D1A4720BC390700DEC9A9 /* DarkSky.json */; };
+		773D1A4E20BC40CC00DEC9A9 /* SettingDateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A4D20BC40CC00DEC9A9 /* SettingDateViewModelTests.swift */; };
+		773D1A5020BC40E200DEC9A9 /* WeekWeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A4F20BC40E200DEC9A9 /* WeekWeatherViewModelTests.swift */; };
+		773D1A5220BC411900DEC9A9 /* SettingTemperatureViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A5120BC411900DEC9A9 /* SettingTemperatureViewModelTest.swift */; };
+		773D1A5420BC413100DEC9A9 /* WeatherDayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A5320BC413100DEC9A9 /* WeatherDayViewModelTests.swift */; };
+		773D1A5620BC4A5900DEC9A9 /* CurrentWeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D1A5520BC4A5900DEC9A9 /* CurrentWeatherViewModelTests.swift */; };
 		7759CFB8200F82F5006D472B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759CFB7200F82F5006D472B /* AppDelegate.swift */; };
 		7759CFBA200F82F5006D472B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759CFB9200F82F5006D472B /* RootViewController.swift */; };
 		7759CFBD200F82F5006D472B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7759CFBB200F82F5006D472B /* Main.storyboard */; };
@@ -62,6 +69,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		773D1A4420BC37D400DEC9A9 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		773D1A4720BC390700DEC9A9 /* DarkSky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DarkSky.json; sourceTree = "<group>"; };
+		773D1A4D20BC40CC00DEC9A9 /* SettingDateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDateViewModelTests.swift; sourceTree = "<group>"; };
+		773D1A4F20BC40E200DEC9A9 /* WeekWeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewModelTests.swift; sourceTree = "<group>"; };
+		773D1A5120BC411900DEC9A9 /* SettingTemperatureViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTemperatureViewModelTest.swift; sourceTree = "<group>"; };
+		773D1A5320BC413100DEC9A9 /* WeatherDayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayViewModelTests.swift; sourceTree = "<group>"; };
+		773D1A5520BC4A5900DEC9A9 /* CurrentWeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModelTests.swift; sourceTree = "<group>"; };
 		7759CFB4200F82F5006D472B /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7759CFB7200F82F5006D472B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7759CFB9200F82F5006D472B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +144,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		773D1A4320BC378500DEC9A9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				773D1A4420BC37D400DEC9A9 /* XCTestCase.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		773D1A4620BC388E00DEC9A9 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				773D1A4720BC390700DEC9A9 /* DarkSky.json */,
+				77E2BA122011F2FA00651699 /* MockURLSession.swift */,
+				77E2BA142011F30700651699 /* MockURLSessionDataTask.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		773D1A4920BC393800DEC9A9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7759CFCE200F82F5006D472B /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		773D1A4A20BC397500DEC9A9 /* TestCase */ = {
+			isa = PBXGroup;
+			children = (
+				77E2BA062011EA9900651699 /* WeatherDataManagerTests.swift */,
+				773D1A4D20BC40CC00DEC9A9 /* SettingDateViewModelTests.swift */,
+				773D1A4F20BC40E200DEC9A9 /* WeekWeatherViewModelTests.swift */,
+				773D1A5120BC411900DEC9A9 /* SettingTemperatureViewModelTest.swift */,
+				773D1A5320BC413100DEC9A9 /* WeatherDayViewModelTests.swift */,
+				773D1A5520BC4A5900DEC9A9 /* CurrentWeatherViewModelTests.swift */,
+			);
+			path = TestCase;
+			sourceTree = "<group>";
+		};
 		7759CFAB200F82F5006D472B = {
 			isa = PBXGroup;
 			children = (
@@ -172,10 +225,10 @@
 		7759CFCB200F82F5006D472B /* SkyTests */ = {
 			isa = PBXGroup;
 			children = (
-				7759CFCE200F82F5006D472B /* Info.plist */,
-				77E2BA062011EA9900651699 /* WeatherDataManagerTests.swift */,
-				77E2BA122011F2FA00651699 /* MockURLSession.swift */,
-				77E2BA142011F30700651699 /* MockURLSessionDataTask.swift */,
+				773D1A4A20BC397500DEC9A9 /* TestCase */,
+				773D1A4920BC393800DEC9A9 /* SupportingFiles */,
+				773D1A4620BC388E00DEC9A9 /* Stubs */,
+				773D1A4320BC378500DEC9A9 /* Extension */,
 			);
 			path = SkyTests;
 			sourceTree = "<group>";
@@ -426,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773D1A4820BC390700DEC9A9 /* DarkSky.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +533,13 @@
 			files = (
 				77E2BA152011F30700651699 /* MockURLSessionDataTask.swift in Sources */,
 				77E2BA132011F2FA00651699 /* MockURLSession.swift in Sources */,
+				773D1A4520BC37D400DEC9A9 /* XCTestCase.swift in Sources */,
+				773D1A5620BC4A5900DEC9A9 /* CurrentWeatherViewModelTests.swift in Sources */,
+				773D1A5020BC40E200DEC9A9 /* WeekWeatherViewModelTests.swift in Sources */,
 				77E2BA072011EA9900651699 /* WeatherDataManagerTests.swift in Sources */,
+				773D1A4E20BC40CC00DEC9A9 /* SettingDateViewModelTests.swift in Sources */,
+				773D1A5420BC413100DEC9A9 /* WeatherDayViewModelTests.swift in Sources */,
+				773D1A5220BC411900DEC9A9 /* SettingTemperatureViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GUJU2WAGX;
@@ -654,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GUJU2WAGX;
@@ -674,7 +736,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkyTests/Info.plist;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
+				INFOPLIST_FILE = SkyTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.SkyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,7 +755,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkyTests/Info.plist;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
+				INFOPLIST_FILE = SkyTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.SkyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,6 +772,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.SkyUITests;
@@ -725,6 +790,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GUJU2WAGX;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.junyixin.SkyUITests;

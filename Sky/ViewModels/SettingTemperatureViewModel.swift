@@ -12,7 +12,7 @@ struct SettingTemperatureViewModel {
     let temperatureMode: TemperatureMode
     
     var labelText: String {
-        return temperatureMode == .celsius ? "Celsius" : "Fahrenhait"
+        return temperatureMode == .celsius ? "Celsius" : "Fahrenheit"
     }
     
     var accessory: UITableViewCellAccessoryType {

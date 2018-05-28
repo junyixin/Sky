@@ -38,11 +38,11 @@ class CurrentWeatherUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testLocationButtonExists() {
-        let locationBtn = app.buttons["locationBtn"]
-        
-        XCTAssert(locationBtn.exists)
-    }
+//    func testLocationButtonExists() {
+//        let locationBtn = app.buttons["locationBtn"]
+//
+//        XCTAssert(locationBtn.exists)
+//    }
     
     
 }

@@ -21,17 +21,17 @@ class SettingTemperatureViewModelTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.temperatureMode)
     }
     
-    func testTemperatureDisplayInCelsiusMode() {
+    func test_temperature_display_in_celsius_mode() {
         let vm = SettingTemperatureViewModel(temperatureMode: .celsius)
         XCTAssertEqual(vm.labelText, "Celsius")
     }
     
-    func testTemperatureDisplayInFahrenheitMode() {
+    func test_temperature_display_in_fahrenheit_mode() {
         let vm = SettingTemperatureViewModel(temperatureMode: .fahrenheit)
         XCTAssertEqual(vm.labelText, "Fahrenheit")
     }
     
-    func testTemperatureCelsiusModeSelected() {
+    func test_temperature_celsius_mode_selected() {
         let temperatureMode: TemperatureMode = .celsius
         
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)
@@ -39,7 +39,7 @@ class SettingTemperatureViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.checkmark)
     }
     
-    func testTemperatureCelsiusModeUnSelected() {
+    func test_temperature_celsius_mode_unselected() {
         let temperatureMode: TemperatureMode = .celsius
         
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)
@@ -47,7 +47,7 @@ class SettingTemperatureViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.none)
     }
     
-    func testTemperatureFahrenheitModeSelected() {
+    func test_temperature_fahrenheit_mode_selected() {
         let temperatureMode: TemperatureMode = .fahrenheit
         
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)
@@ -55,7 +55,7 @@ class SettingTemperatureViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.checkmark)
     }
     
-    func testTemperatureFahrenheitModeUnSelected() {
+    func test_temperature_fahrenheit_mode_unselected() {
         let temperatureMode: TemperatureMode = .fahrenheit
         
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)

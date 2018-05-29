@@ -28,13 +28,13 @@ class WeatherDataManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testWeatherDataAtStartSession() {
+    func test_weather_data_at_start_session() {
         manager?.weatherDataAt(latitude: 12.00, longitude: 29.18) { (_, _) in }
         
         XCTAssert(session.sessionDataTask.isResumeCalled)
     }
     
-    func testWeatherDataAtGetsData() {
+    func test_weather_data_at_gets_data() {
         let expect = expectation(description: "loading data from: \(API.authenticatedURL)")
         var data: WeatherData? = nil
         
@@ -47,7 +47,7 @@ class WeatherDataManagerTests: XCTestCase {
         XCTAssertNotNil(data)
     }
     
-    func testWeatherDataAtFailedRequest() {
+    func test_weather_data_at_failed_request() {
         session.responseError = NSError(domain: "invalid request", code: 100, userInfo: nil)
         
         var error: DataManagerError? = nil
@@ -58,7 +58,7 @@ class WeatherDataManagerTests: XCTestCase {
         XCTAssertEqual(error, DataManagerError.failedRequest)
     }
     
-    func testWeatherDataAtResponseStatusCodeNotEqualTo200() {
+    func test_weather_data_at_response_status_code_not_equal_to_200() {
         session.responseHeader = HTTPURLResponse(url: URL(string: "https://darksky.net")!, statusCode: 400, httpVersion: nil, headerFields: nil)
         
         let data = "{}".data(using: .utf8)!
@@ -72,7 +72,7 @@ class WeatherDataManagerTests: XCTestCase {
         XCTAssertEqual(error, DataManagerError.failedRequest)
     }
     
-    func testWeatherDataAtHandleInvalidResponse() {
+    func test_weather_data_at_handle_invalid_response() {
         session.responseHeader = HTTPURLResponse(url: URL(string: "https://darksky.net")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
         let data = "{".data(using: .utf8)!
@@ -86,62 +86,39 @@ class WeatherDataManagerTests: XCTestCase {
         XCTAssertEqual(error, DataManagerError.invalidResponse)
     }
     
-//    func testWeatherDataAtHandlerResponseDecode() {
-//        session.responseHeader = HTTPURLResponse(url: URL(string: "https://darksky.net")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-//        
-//        let data = """
-//        {
-//            "latitude": 52.0,
-//            "longitude": 100.0,
-//            "currently": {
-//                "temperature": 23.5,
-//                "humidity": 0.91,
-//                "icon": "snow",
-//                "time": 1507816281,
-//                "summary": "Clear"
-//            },
-//            daily: {
-//                "data": [
-//                    {
-//                        "time": 1507816281,
-//                        "temperatureHigh": 82,
-//                        "temperatureLow": 66,
-//                        "icon": "clear-day",
-//                        "humidity": 0.66
-//                    }
-//                ]
-//            }
-//        }
-//        """.data(using: .utf8)!
-//        session.responseData = data
-//
-//        var decoded: WeatherData? = nil
-//        manager?.weatherDataAt(latitude: 52.00, longitude: 120.00, completion: { (d, _) in
-//            decoded = d
-//        })
-//
-//        let expectWeekWeatherData = WeatherData.WeekWeatherData(
-//            data: [
-//                ForecastData(
-//                    time: Date(timeIntervalSince1970: 1507816281),
-//                    temperatureHigh: 82,
-//                    temperatureLow: 66,
-//                    icon: "clear-day",
-//                    humidity: 0.66)
-//            ])
-//        let expect = WeatherData(
-//            latitude: 52.0,
-//            longitude: 100.0,
-//            currently: WeatherData.CurrentWeather(
-//                time: Date(timeIntervalSince1970: 1507816281),
-//                summary: "Clear",
-//                icon: "snow",
-//                temperature: 23.5,
-//                humidity: 0.91
-//            ),
-//            daily: expectWeekWeatherData
-//        )
-//
-//        XCTAssertEqual(decoded, expect)
-//    }
+    func test_weather_data_at_handler_response_decode() {
+        session.responseHeader = HTTPURLResponse(url: URL(string: "https://darksky.net")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let data = loadDataFromBundle(ofName: "DarkSky", ext: "json")
+        session.responseData = data
+
+        var decoded: WeatherData? = nil
+        manager?.weatherDataAt(latitude: 100.00, longitude: 100.00, completion: { (d, _) in
+            decoded = d
+        })
+
+        let expectWeekWeatherData = WeatherData.WeekWeatherData(
+            data: [
+                ForecastData(
+                    time: Date(timeIntervalSince1970: 1527519757),
+                    temperatureHigh: 82,
+                    temperatureLow: 66,
+                    icon: "clear-day",
+                    humidity: 0.25)
+            ])
+        let expect = WeatherData(
+            latitude: 100.0,
+            longitude: 100.0,
+            currently: WeatherData.CurrentWeather(
+                time: Date(timeIntervalSince1970: 1527519757),
+                summary: "Light Snow",
+                icon: "snow",
+                temperature: 23.0,
+                humidity: 0.91
+            ),
+            daily: expectWeekWeatherData
+        )
+
+        XCTAssertEqual(decoded, expect)
+    }
 }

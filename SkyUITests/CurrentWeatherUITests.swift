@@ -16,21 +16,22 @@ class CurrentWeatherUITests: XCTestCase {
         super.setUp()
         
         continueAfterFailure = false
-        
         app.launchArguments += ["UI-TESTING"]
-        app.launchEnvironment["SkyJSON"] = """
+        
+        let json = """
             {
-            "latitude": 52.0,
-            "longitude": 100.0,
-            "currently": {
-                "temperature": 23.5,
-                "humidity": 0.91,
-                "icon": "snow",
-                "time": 1507816281,
-                "summary": "Clear"
+                "longitude" : 100,
+                "latitude" : 52,
+                "currently" : {
+                    "temperature" : 23,
+                    "humidity" : 0.91,
+                    "icon" : "snow",
+                    "time" : 1507180335,
+                    "summary" : "Light Snow"
                 }
             }
         """
+        app.launchEnvironment["SkyJSON"] = json
         app.launch()
     }
     
@@ -38,11 +39,9 @@ class CurrentWeatherUITests: XCTestCase {
         super.tearDown()
     }
     
-//    func testLocationButtonExists() {
-//        let locationBtn = app.buttons["locationBtn"]
-//
-//        XCTAssert(locationBtn.exists)
-//    }
-    
-    
+    func testLocationButtonExists() {
+        let locationBtn = app.buttons["locationBtn"]
+
+        XCTAssert(locationBtn.exists)
+    }
 }

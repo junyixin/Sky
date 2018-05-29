@@ -21,17 +21,17 @@ class SettingDateViewModelTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.dateMode)
     }
     
-    func testDateDisplayInTextMode() {
+    func test_date_display_in_text_mode() {
         let vm = SettingDateViewModel(dateMode: .text)
         XCTAssertEqual(vm.labelText, "Fri, 01 December")
     }
     
-    func testDateDisplayInDigitMode() {
+    func test_date_display_in_digit_mode() {
         let vm = SettingDateViewModel(dateMode: .digit)
         XCTAssertEqual(vm.labelText, "F, 12/01")
     }
     
-    func testTextDateModeSelected() {
+    func test_text_date_mode_selected() {
         let dateMode: DateMode = .text
         
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
@@ -39,7 +39,7 @@ class SettingDateViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.checkmark)
     }
     
-    func testTextDateModeUnSelected() {
+    func test_text_date_mode_unselected() {
         let dateMode: DateMode = .text
         
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
@@ -47,7 +47,7 @@ class SettingDateViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.none)
     }
     
-    func testDigitDateModeSelected() {
+    func test_digit_date_mode_selected() {
         let dateMode: DateMode = .digit
         
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
@@ -55,7 +55,7 @@ class SettingDateViewModelTests: XCTestCase {
         XCTAssertEqual(vm.accessory, UITableViewCellAccessoryType.checkmark)
     }
     
-    func testDigitDateModeUnSelected() {
+    func test_digit_date_mode_unselected() {
         let dateMode: DateMode = .digit
         
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)

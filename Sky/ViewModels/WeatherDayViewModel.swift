@@ -41,7 +41,7 @@ struct WeatherDayViewModel {
     }
     
     var humidity: String {
-        return String(format: "%.0f %%", weatherDay.humidity)
+        return String(format: "%.0f %%", weatherDay.humidity * 100)
     }
 
     /// helpers

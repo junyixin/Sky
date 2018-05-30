@@ -26,8 +26,6 @@ class SettingTableViewController: UITableViewController {
 
 extension SettingTableViewController {
     
-    /// MARK: TableView DataSource
-    
     private enum Section: Int {
         case date
         case temperature
@@ -40,7 +38,6 @@ extension SettingTableViewController {
             return Section.temperature.rawValue + 1
         }
     }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return Section.count
